@@ -32,8 +32,9 @@ RUN mkdir -p /etc/pdns/pdns.d
 
 RUN chmod 755 /entrypoint.sh
 
-EXPOSE 53 53/udp
-EXPOSE 53 53/tcp
+ENTRYPOINT ["/entrypoint.sh"]
+
 EXPOSE 8081 8081/tcp
 
-ENTRYPOINT ["/entrypoint.sh"]
+# EXPOSE 53 53/udp
+EXPOSE 53 53/tcp
