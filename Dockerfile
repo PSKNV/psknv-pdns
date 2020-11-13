@@ -28,13 +28,11 @@ COPY pdns.conf.tpl /
 COPY entrypoint.sh /
 COPY sqlite3.sql /
 
-RUN mkdir -p /etc/pdns/pdns.d
-
 RUN chmod 755 /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 8081 8081/tcp
 
-# EXPOSE 53 53/udp
-EXPOSE 53 53/tcp
+EXPOSE 5353 53/udp
+EXPOSE 5353 53/tcp

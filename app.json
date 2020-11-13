@@ -5,6 +5,7 @@
   "repository": "https://github.com/PSKNV/psknv-pdns",
   "stack": "container",
   "env": {
+    "PORT": "53",
     "PDNS_dnsupdate": "yes",
     "PDNS_disable-axfr": "yes",
     "PDNS_default-soa-edit-signed": "INCEPTION-EPOCH",
@@ -39,6 +40,7 @@
     "PDNS_dname-processing": "no",
     "PDNS_query-local-address": "0.0.0.0",
     "PDNS_launch": "gsqlite3",
+    "PDNS_socket-dir": "/",
     "PDNS_include-dir": "/etc/pdns/pdns.d",
     "PDNS_webserver-address": "0.0.0.0",
     "PDNS_load-modules": "gsqlite3",

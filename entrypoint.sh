@@ -6,6 +6,12 @@ set -e
 # treat everything except -- as exec cmd
 [ "${1:0:2}" != "--" ] && exec "$@"
 
+mkdir -p /etc/pdns/pdns.d
+mkdir -p /var/run/pdns
+
+chmod 755 -R /etc/pdns
+chmod 755 -R /var/run/pdns
+
 envtpl < /pdns.conf.tpl > /etc/pdns/pdns.conf
 
 trap "/usr/sbin/pdns_control quit" SIGHUP SIGINT SIGTERM
